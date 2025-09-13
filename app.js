@@ -1,43 +1,14 @@
-/*
+import React from "react"
+import reactDOM from "react-dom/client"
 
-<div id="parent">
-    <div id="child_1">
-        <ul id="u_list">
-            <li>react</li>
-            <li>AAO</li>
-            <li>NODE</li>
-        </ul>
-    </div>
-
-    <div id="child_2">
-        <ol id="o_list">
-            <li>Mobile</li>
-            <li>Watch</li>
-            <li>Shoe</li>
-        </ol>
-    </div>
-</div>
-
-*/
+const toDO=<ul>
+    <li key="1">Investment Learning</li>
+    <li key="2">clean bike</li> 
+    <li key="3">workout</li>
+</ul>
 
 
-const parent=React.createElement("div",{id:"Parent"},[
-    React.createElement("div",{id:"child_1"},
-        React.createElement("ul",{id:"u_list"},[
-            React.createElement("li",{},"React"),
-            React.createElement("li",{},"AAO"),
-            React.createElement("li",{},"Node")
-        ])
-    ),
-     React.createElement("div",{id:"child_2"},
-        React.createElement("ol",{id:"o_list"},[
-            React.createElement("li",{},"Mobile"),
-            React.createElement("li",{},"Watch"),
-            React.createElement("li",{},"Shoe")
-        ])
-    )
-])
+//here the above jsx is converted(transpiled) into actual js by babel so that browser can understand.All these are done behind the scene very fast by babel, even before going to "root.render()" 
 
-const root=ReactDOM.createRoot(document.getElementById("root"))
-
-root.render(parent)
+const root=reactDOM.createRoot(document.getElementById("root"))
+root.render(toDO)
