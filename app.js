@@ -1,14 +1,51 @@
 import React from "react"
 import reactDOM from "react-dom/client"
 
-const toDO=<ul>
-    <li key="1">Investment Learning</li>
-    <li key="2">clean bike</li> 
-    <li key="3">workout</li>
-</ul>
+const header=<h1>Welcome to React</h1>
+
+//react Element 
+const mailId="petermj@gmail.com"
+const email=<>
+<h3>Email:</h3>
+<p>{mailId}</p>
+</>
+
+//functional Component
+const Details = ()=>{
+    return <>
+    <h3>Name : Captain</h3> 
+    <hr></hr>
+    <h5>about</h5>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam repellat voluptate iure voluptatem est rem ab in alias optio nesciunt eveniet ratione esse ea, repudiandae aliquid modi qui perspiciatis amet?
+    </p>
+    {/*using react element inside react component*/}
+    {email}
+    {console.log("2+3 is "+ 2+3)}
+    </>
+}
+
+const Contact = () => (
+    <h3>Phone : 9876543211</h3>
+)
 
 
-//here the above jsx is converted(transpiled) into actual js by babel so that browser can understand.All these are done behind the scene very fast by babel, even before going to "root.render()" 
+const git= ()=>{
+    return <>
+    <h3>git name : Peter parker MJ</h3>
+        </>
+    
+}
+
+//component composition
+function App(){
+    return <>
+    <Details/>
+    <Contact></Contact>
+    {git()}
+    </>
+}
+
+
 
 const root=reactDOM.createRoot(document.getElementById("root"))
-root.render(toDO)
+root.render(<App/>)
